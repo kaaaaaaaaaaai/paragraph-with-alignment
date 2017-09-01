@@ -9,7 +9,7 @@
 
 module.exports = function (output) {
   if (output.text === '')
-    return;
+    return false;
 
-  return output;
+  return true;
 };

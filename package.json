@@ -1,7 +1,7 @@
 {
   "name": "codex.editor.paragraph",
   "exportModuleName": "paragraph",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [],
   "description": "Paragraph plugin for CodeX.Editor",
   "main": "./lib/bundle.js",
