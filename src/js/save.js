@@ -3,7 +3,7 @@
 /**
  * Method to extract JSON data from HTML block
  *
- * @param block
+ * @param text
  */
 
 module.exports = function (text) {
