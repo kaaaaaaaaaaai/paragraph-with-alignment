@@ -2,10 +2,20 @@
 * Empty paragraph placeholder
 */
 
-.ce-paragraph {
-    padding: 0.7em 0 !important;
-    line-height: 1.7em;
+.ce-text {
+    padding: 10px 0;
+    line-height: 1.6em;
+    outline: none;
 }
+
+.ce-text p:first-of-type {
+    margin-top: 0;
+}
+
+.ce-text p:last-of-type {
+    margin-bottom: 0;
+}
+
 
 .ce-paragraph:empty::before,
 .ce-paragraph p:empty::before{
@@ -15,7 +25,7 @@
     transition: opacity 200ms ease;
 }
 .ce-paragraph:focus::before{
-	opacity: .1;
+    opacity: .1;
 }
 
 .toolbar-opened .ce-paragraph::before {
