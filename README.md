@@ -65,7 +65,7 @@ This Tool has no config params
 
 ## Tool's settings
 
-This Tool has no setting
+This Tool has no settings
 
 ## Output data
 
