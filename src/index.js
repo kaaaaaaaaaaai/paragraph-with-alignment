@@ -48,7 +48,7 @@ class Paragraph {
 
     this._CSS = {
       block: this.api.styles.block,
-      wrapper: 'ce-text'
+      wrapper: 'ce-paragraph'
     };
 
     this._data = {};

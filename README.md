@@ -63,10 +63,6 @@ var editor = CodexEditor({
 
 This Tool has no config params
 
-## Tool's settings
-
-This Tool has no settings
-
 ## Output data
 
 | Field  | Type     | Description      |
