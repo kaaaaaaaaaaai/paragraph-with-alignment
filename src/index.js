@@ -29,15 +29,6 @@ class Paragraph {
   }
 
   /**
-   * Class for the Toolbox icon
-   * @returns {string}
-   * @public
-   */
-  static get iconClassName() {
-    return 'cdx-text-icon';
-  }
-
-  /**
    * Render plugin`s main Element and fill it with saved data
    * @param {ParagraphData} savedData — previously saved data
    * @param {object} config - user config for Tool
