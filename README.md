@@ -27,11 +27,9 @@ const Paragraph = require('codex.editor.paragraph');
 
 ### Load from CDN
 
-Get newest bundle path from [RawGit](https://rawgit.com) — open site and paste link to JS bundle in repository.
+You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/codex.editor.papagraph).
 
-`https://github.com/codex-editor/paragraph/blob/master/dist/bundle.js`
-
-> Note: use `production` link with commit hash to avoid issues with caching.
+`https://cdn.jsdelivr.net/npm/codex.editor.papagraph@2.0.2`
 
 Then require this script on page with CodeX Editor.
 
