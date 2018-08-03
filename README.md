@@ -27,9 +27,9 @@ const Paragraph = require('codex.editor.paragraph');
 
 ### Load from CDN
 
-You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/codex.editor.papagraph).
+You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/codex.editor.paragraph).
 
-`https://cdn.jsdelivr.net/npm/codex.editor.papagraph@2.0.2`
+`https://cdn.jsdelivr.net/npm/codex.editor.paragraph@2.0.2`
 
 Then require this script on page with CodeX Editor.
 
