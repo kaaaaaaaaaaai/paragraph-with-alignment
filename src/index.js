@@ -30,11 +30,13 @@ class Paragraph {
 
   /**
    * Render plugin`s main Element and fill it with saved data
-   * @param {ParagraphData} savedData — previously saved data
-   * @param {object} config - user config for Tool
-   * @param {object} api - CodeX Editor API
+   *
+   * @param {{data: ParagraphData, config: object, api: object}}
+   *   data — previously saved data
+   *   config - user config for Tool
+   *   api - CodeX Editor API
    */
-  constructor(savedData, config, api) {
+  constructor({data, config, api}) {
     this.api = api;
 
     this._CSS = {
@@ -45,7 +47,7 @@ class Paragraph {
     this._data = {};
     this._element = this.drawView();
 
-    this.data = savedData;
+    this.data = data;
   }
 
   /**
