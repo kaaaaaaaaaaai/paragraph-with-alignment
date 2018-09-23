@@ -110,12 +110,8 @@ class Paragraph {
    * @public
    */
   save(toolsContent) {
-    /**
-     * @todo sanitize data
-     */
-
     return {
-      text: toolsContent.innerHTML
+      text: this.api.sanitizer.clean(toolsContent.innerHTML)
     };
   }
 
