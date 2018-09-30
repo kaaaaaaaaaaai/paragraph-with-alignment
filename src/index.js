@@ -116,6 +116,30 @@ class Paragraph {
   }
 
   /**
+   * Sanitizer rules
+   */
+  get sanitize() {
+    return {
+      text: {
+        p: {},
+        a: {
+          href: true,
+          target: '_blank',
+          rel: 'nofollow'
+        },
+        b: {},
+        i: {},
+        span: {
+          class: 'inline-code'
+        },
+        marl: {
+          class: 'cdx-marker'
+        }
+      }
+    }
+  }
+
+  /**
    * Get current Tools`s data
    * @returns {ParagraphData} Current data
    * @private
