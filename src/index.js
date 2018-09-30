@@ -111,7 +111,7 @@ class Paragraph {
    */
   save(toolsContent) {
     return {
-      text: this.api.sanitizer.clean(toolsContent.innerHTML)
+      text: toolsContent.innerHTML
     };
   }
 
