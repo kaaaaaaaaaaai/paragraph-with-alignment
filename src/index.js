@@ -132,7 +132,7 @@ class Paragraph {
         span: {
           class: 'inline-code'
         },
-        marl: {
+        mark: {
           class: 'cdx-marker'
         }
       }
