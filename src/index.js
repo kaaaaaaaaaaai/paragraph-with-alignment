@@ -121,7 +121,6 @@ class Paragraph {
   get sanitize() {
     return {
       text: {
-        p: {},
         a: {
           href: true,
           target: '_blank',
@@ -129,6 +128,7 @@ class Paragraph {
         },
         b: {},
         i: {},
+        br: true,
         span: {
           class: 'inline-code'
         },
