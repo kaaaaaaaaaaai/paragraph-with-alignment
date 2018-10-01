@@ -110,12 +110,32 @@ class Paragraph {
    * @public
    */
   save(toolsContent) {
-    /**
-     * @todo sanitize data
-     */
-
     return {
       text: toolsContent.innerHTML
+    };
+  }
+
+  /**
+   * Sanitizer rules
+   */
+  get sanitize() {
+    return {
+      text: {
+        a: {
+          href: true,
+          target: '_blank',
+          rel: 'nofollow'
+        },
+        b: {},
+        i: {},
+        br: true,
+        span: {
+          class: 'inline-code'
+        },
+        mark: {
+          class: 'cdx-marker'
+        }
+      }
     };
   }
 
