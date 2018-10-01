@@ -136,7 +136,7 @@ class Paragraph {
           class: 'cdx-marker'
         }
       }
-    }
+    };
   }
 
   /**
