@@ -122,7 +122,6 @@ class Paragraph {
     return {
       text: {
         br: true,
-        b: false
       }
     };
   }
