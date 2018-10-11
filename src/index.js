@@ -132,11 +132,11 @@ class Paragraph {
         span: {
           class: 'inline-code'
         },
-        mark: {
-          class: 'cdx-marker'
-        }
+        // mark: {
+        //   class: 'cdx-marker'
+        // }
       }
-    }
+    };
   }
 
   /**
