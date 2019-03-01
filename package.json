@@ -1,14 +1,16 @@
 {
-  "name": "codex.editor.paragraph",
-  "version": "2.3.3",
+  "name": "@editorjs/paragraph",
+  "version": "2.4.0",
   "keywords": [
     "codex editor",
     "paragraph",
-    "tool"
+    "tool",
+    "editor.js",
+    "editorjs"
   ],
-  "description": "Paragraph Tool for CodeX.Editor",
+  "description": "Paragraph Tool for Editor.js",
   "license": "MIT",
-  "repository": "https://github.com/codex-editor/paragraph",
+  "repository": "https://github.com/editor-js/paragraph",
   "main": "./dist/bundle.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js --mode production --watch"
