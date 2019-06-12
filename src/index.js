@@ -19,7 +19,6 @@ require('./index.css').toString();
  * @property {String} text — Paragraph's content. Can include HTML tags: <a><b><i>
  */
 class Paragraph {
-
   /**
    * Default placeholder for Paragraph Tool
    *
@@ -134,6 +133,16 @@ class Paragraph {
     };
 
     this.data = data;
+  }
+
+  /**
+   * @return {{export: string, import: string}}
+   */
+  static get conversionConfig() {
+    return {
+      export: 'text',
+      import: 'text'
+    };
   }
 
   /**
