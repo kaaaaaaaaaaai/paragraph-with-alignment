@@ -27,7 +27,7 @@ class Paragraph {
    * @constructor
    */
   static get DEFAULT_PLACEHOLDER() {
-    return 'Tell your story...';
+    return '';
   }
 
   /**
@@ -45,6 +45,7 @@ class Paragraph {
       block: this.api.styles.block,
       wrapper: 'ce-paragraph'
     };
+    this.onKeyUp = this.onKeyUp.bind(this);
 
     /**
      * Placeholder for paragraph if it is first Block
@@ -58,6 +59,24 @@ class Paragraph {
   }
 
   /**
+   * Check if text content is empty and set empty string to inner html.
+   * We need this because some browsers (e.g. Safari) insert <br> into empty contenteditanle elements
+   *
+   * @param {KeyboardEvent} e - key up event
+   */
+  onKeyUp(e) {
+    if (e.code !== 'Backspace' && e.code !== 'Delete') {
+      return;
+    }
+
+    const {textContent} = this._element;
+
+    if (textContent === '') {
+      this._element.innerHTML = '';
+    }
+  }
+
+  /**
    * Create Tool's view
    * @return {HTMLElement}
    * @private
@@ -68,6 +87,8 @@ class Paragraph {
     div.classList.add(this._CSS.wrapper, this._CSS.block);
     div.contentEditable = true;
     div.dataset.placeholder = this._placeholder;
+
+    div.addEventListener('keyup', this.onKeyUp);
 
     return div;
   }

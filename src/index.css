@@ -7,15 +7,16 @@
   content: attr(data-placeholder);
   color: #707684;
   font-weight: normal;
+  opacity: 0;
 }
 
-.ce-paragraph[data-placeholder]:empty:focus::before {
-  opacity: 0.3;
+/** Show placeholder at the first paragraph if Editor is empty */
+.codex-editor--empty .ce-block:first-child .ce-paragraph[data-placeholder]:empty::before {
+  opacity: 1;
 }
 
-/** Hide placeholder if Block is not first or if Editor is not empty */
-.ce-block:not(:first-child) .ce-paragraph:empty::before,
-.codex-editor:not(.codex-editor--empty) .ce-paragraph:empty::before {
+.codex-editor--toolbox-opened .ce-block:first-child .ce-paragraph[data-placeholder]:empty::before,
+.codex-editor--empty .ce-block:first-child .ce-paragraph[data-placeholder]:empty:focus::before {
   opacity: 0;
 }
 
