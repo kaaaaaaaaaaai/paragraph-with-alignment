@@ -1,6 +1,6 @@
 {
   "name": "@editorjs/paragraph",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "keywords": [
     "codex editor",
     "paragraph",
@@ -18,7 +18,7 @@
   },
   "author": {
     "name": "CodeX",
-    "email": "team@ifmo.su"
+    "email": "team@codex.so"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
