@@ -19,7 +19,6 @@ require('./index.css').toString();
  * @property {String} text — Paragraph's content. Can include HTML tags: <a><b><i>
  */
 class Paragraph {
-
   /**
    * Default placeholder for Paragraph Tool
    *
@@ -155,6 +154,16 @@ class Paragraph {
     };
 
     this.data = data;
+  }
+
+  /**
+   * Enable Conversion Toolbar. Paragraph can be converted to/from other tools
+   */
+  static get conversionConfig() {
+    return {
+      export: 'text', // to convert Paragraph to other block, use 'text' property of saved data
+      import: 'text' // to covert other block's exported string to Paragraph, fill 'text' property of tool data
+    };
   }
 
   /**
