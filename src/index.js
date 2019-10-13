@@ -7,10 +7,9 @@ require('./index.css').toString();
  * Base Paragraph Block for the Editor.js.
  * Represents simple paragraph
  *
- * @author CodeX (team@ifmo.su)
+ * @author CodeX (team@codex.so)
  * @copyright CodeX 2018
  * @license The MIT License (MIT)
- * @version 2.0.0
  */
 
 /**
@@ -213,6 +212,18 @@ class Paragraph {
   static get pasteConfig() {
     return {
       tags: [ 'P' ]
+    };
+  }
+
+  /**
+   * Icon and title for displaying at the Toolbox
+   *
+   * @return {{icon: string, title: string}}
+   */
+  static get toolbox() {
+    return {
+      icon: require('./toolbox-icon.svg').default,
+      title: 'Text'
     };
   }
 }
