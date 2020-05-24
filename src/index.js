@@ -52,6 +52,7 @@ class Paragraph {
     this._placeholder = config.placeholder ? config.placeholder : Paragraph.DEFAULT_PLACEHOLDER;
     this._data = {};
     this._element = this.drawView();
+    this._preserveBlank = config.preserveBlank ? config.preserveBlank : false;
 
     this.data = data;
   }
@@ -123,9 +124,9 @@ class Paragraph {
    * @public
    */
   validate(savedData) {
-    if (savedData.text.trim() === '') {
+    if (savedData.text.trim() === '' && this._preserveBlank !== true) {
       return false;
-    }
+    } 
 
     return true;
   }
