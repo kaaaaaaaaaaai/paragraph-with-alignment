@@ -59,7 +59,13 @@ var editor = EditorJS({
 
 ## Config Params
 
-This Tool has no config params
+This Tool has one config params
+
+Image Tool supports these configuration parameters:
+
+| Field | Type     | Description        |
+| ----- | -------- | ------------------ |
+| preserveBlank | `boolean` | (default: `false`) Whether or not to keep(validate) blank paragraphs when saving editor data |
 
 ## Output data
 
