@@ -11,7 +11,7 @@ Basic text Tool for the [Editor.js](https://ifmo.su/editor).
 Get the package
 
 ```shell
-npm i --save-dev @editorjs/paragraph
+npm i --save @editorjs/paragraph
 ```
 
 Include module at your application
