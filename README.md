@@ -44,7 +44,7 @@ Add a new Tool to the `tools` property of the Editor.js initial config.
 ```javascript
 var editor = EditorJS({
   ...
-  
+
   tools: {
     ...
     paragraph: {
@@ -52,14 +52,19 @@ var editor = EditorJS({
       inlineToolbar: true,
     },
   }
-  
+
   ...
 });
 ```
 
 ## Config Params
 
-This Tool has no config params
+The Paragraph Tool supports these configuration parameters:
+
+| Field | Type     | Description        |
+| ----- | -------- | ------------------ |
+| placeholder | `string` | The placeholder. Will be shown only in the first paragraph when the whole editor is empty.  |
+| preserveBlank | `boolean` | (default: `false`) Whether or not to keep blank paragraphs when saving editor data |
 
 ## Output data
 
