@@ -38,9 +38,9 @@ class Paragraph {
    * Render plugin`s main Element and fill it with saved data
    *
    * @param {object} params - constructor params
-   * @param {ParagraphData} data - previously saved data
-   * @param {ParagraphConfig} config - user config for Tool
-   * @param {object} api - editor.js api
+   * @param {ParagraphData} params.data - previously saved data
+   * @param {ParagraphConfig} params.config - user config for Tool
+   * @param {object} params.api - editor.js api
    */
   constructor({data, config, api}) {
     this.api = api;
