@@ -13,6 +13,12 @@ require('./index.css').toString();
  */
 
 /**
+ * @typedef {object} ParagraphConfig
+ * @property {string} placeholder - placeholder for the empty paragraph
+ * @property {boolean} preserveBlank - Whether or not to keep blank paragraphs when saving editor data
+ */
+
+/**
  * @typedef {Object} ParagraphData
  * @description Tool's input and output data format
  * @property {String} text — Paragraph's content. Can include HTML tags: <a><b><i>
@@ -31,10 +37,10 @@ class Paragraph {
   /**
    * Render plugin`s main Element and fill it with saved data
    *
-   * @param {{data: ParagraphData, config: object, api: object}}
-   *   data — previously saved data
-   *   config - user config for Tool
-   *   api - Editor.js API
+   * @param {object} params - constructor params
+   * @param {ParagraphData} data - previously saved data
+   * @param {ParagraphConfig} config - user config for Tool
+   * @param {object} api - editor.js api
    */
   constructor({data, config, api}) {
     this.api = api;
@@ -52,7 +58,7 @@ class Paragraph {
     this._placeholder = config.placeholder ? config.placeholder : Paragraph.DEFAULT_PLACEHOLDER;
     this._data = {};
     this._element = this.drawView();
-    this._preserveBlank = config.preserveBlank ? config.preserveBlank : false;
+    this._preserveBlank = config.preserveBlank !== undefined ? config.preserveBlank : false;
 
     this.data = data;
   }
@@ -124,9 +130,9 @@ class Paragraph {
    * @public
    */
   validate(savedData) {
-    if (savedData.text.trim() === '' && this._preserveBlank !== true) {
+    if (savedData.text.trim() === '' && !this._preserveBlank) {
       return false;
-    } 
+    }
 
     return true;
   }
