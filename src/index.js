@@ -91,7 +91,7 @@ class Paragraph {
 
     div.classList.add(this._CSS.wrapper, this._CSS.block);
     div.contentEditable = true;
-    div.dataset.placeholder = this._placeholder;
+    div.dataset.placeholder = this.api.i18n.t(this._placeholder);
 
     div.addEventListener('keyup', this.onKeyUp);
 
