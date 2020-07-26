@@ -11,7 +11,7 @@ Basic text Tool for the [Editor.js](https://ifmo.su/editor).
 Get the package
 
 ```shell
-npm i --save-dev @editorjs/paragraph
+npm i --save @editorjs/paragraph
 ```
 
 Include module at your application
@@ -39,12 +39,16 @@ Then require this script on page with Editor.js.
 
 ## Usage
 
+The Paragraph tool is included at editor.js by default, so you don't need to connect it manually.
+If you want to connect your customized version of this tool, do not forget to use the [`initialBlock`](https://editorjs.io/configuration#change-the-default-block)
+option of the editor config.
+
 Add a new Tool to the `tools` property of the Editor.js initial config.
 
 ```javascript
 var editor = EditorJS({
   ...
-  
+
   tools: {
     ...
     paragraph: {
@@ -52,14 +56,19 @@ var editor = EditorJS({
       inlineToolbar: true,
     },
   }
-  
+
   ...
 });
 ```
 
 ## Config Params
 
-This Tool has no config params
+The Paragraph Tool supports these configuration parameters:
+
+| Field | Type     | Description        |
+| ----- | -------- | ------------------ |
+| placeholder | `string` | The placeholder. Will be shown only in the first paragraph when the whole editor is empty.  |
+| preserveBlank | `boolean` | (default: `false`) Whether or not to keep blank paragraphs when saving editor data |
 
 ## Output data
 

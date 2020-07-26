@@ -13,6 +13,12 @@ require('./index.css').toString();
  */
 
 /**
+ * @typedef {object} ParagraphConfig
+ * @property {string} placeholder - placeholder for the empty paragraph
+ * @property {boolean} preserveBlank - Whether or not to keep blank paragraphs when saving editor data
+ */
+
+/**
  * @typedef {Object} ParagraphData
  * @description Tool's input and output data format
  * @property {String} text — Paragraph's content. Can include HTML tags: <a><b><i>
@@ -31,11 +37,11 @@ class Paragraph {
   /**
    * Render plugin`s main Element and fill it with saved data
    *
-   * @param {{data: ParagraphData, config: object, api: object}}
-   *   data — previously saved data
-   *   config - user config for Tool
-   *   api - Editor.js API
-   *   readOny - read only mode flag
+   * @param {object} params - constructor params
+   * @param {ParagraphData} params.data - previously saved data
+   * @param {ParagraphConfig} params.config - user config for Tool
+   * @param {object} params.api - editor.js api
+   * @param {boolean} readOnly - read only mode flag
    */
   constructor({data, config, api, readOnly}) {
     this.api = api;
@@ -57,6 +63,7 @@ class Paragraph {
     this._placeholder = config.placeholder ? config.placeholder : Paragraph.DEFAULT_PLACEHOLDER;
     this._data = {};
     this._element = this.drawView();
+    this._preserveBlank = config.preserveBlank !== undefined ? config.preserveBlank : false;
 
     this.data = data;
   }
@@ -88,7 +95,8 @@ class Paragraph {
     let div = document.createElement('DIV');
 
     div.classList.add(this._CSS.wrapper, this._CSS.block);
-    div.dataset.placeholder = this._placeholder;
+    div.contentEditable = true;
+    div.dataset.placeholder = this.api.i18n.t(this._placeholder);
 
     if (!this.readOnly) {
       div.contentEditable = true;
@@ -130,7 +138,7 @@ class Paragraph {
    * @public
    */
   validate(savedData) {
-    if (savedData.text.trim() === '') {
+    if (savedData.text.trim() === '' && !this._preserveBlank) {
       return false;
     }
 
