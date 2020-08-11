@@ -10,6 +10,8 @@
   <meta charset="UTF-8">
   <title>Editor.js 🤩🧦🤨 example</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+  <link href="assets/demo.css" rel="stylesheet">
+  <script src="assets/json-preview.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
@@ -51,10 +53,8 @@
    Read more in Tool's README file. For example:
    https://github.com/editor-js/header#installation
    -->
-  <script src="./dist/bundle.js" onload="document.getElementById('hint').hidden = true"></script><!-- Header -->
-
-  <!-- Load Editor.js's Core -->
-  <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.18.0/dist/editor.min.js"></script>
+  <script src="../dist/bundle.js" onload="document.getElementById('hint').hidden = true"></script><!-- Header -->
 
   <!-- Initialization -->
   <script>
@@ -77,9 +77,15 @@
        * Tools list
        */
       tools: {
-        paragraph:Paragraph
-
+        paragraph: {
+          class:Paragraph,
+          inlineToolbar: true,
+        },
       },
+      /**
+       * Previously saved data that should be rendered
+       */
+      data: {"time":1597151733527,"blocks":[{"type":"paragraph","data":{"text":"right","alignment":"right"}},{"type":"paragraph","data":{"text":"leeeeeeeeeeeeeeft","alignment":"left"}},{"type":"paragraph","data":{"text":"centerrrrrrrrr!","alignment":"center"}}],"version":"2.18.0"},
 
       /**
        * This Tool will be used as default
@@ -99,6 +105,7 @@
     });
 
     editor.isReady.then(() => {
+
     })
 
     /**
@@ -106,7 +113,7 @@
      */
     saveButton.addEventListener('click', function () {
       editor.save().then((savedData) => {
-        console.log(savedData);
+        cPreview.show(savedData, document.getElementById("output"));
       });
     });
   </script>
