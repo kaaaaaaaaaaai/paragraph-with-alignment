@@ -1,8 +1,9 @@
 ![](https://badgen.net/badge/Editor.js/v2.0/blue)
 
-# Paragraph Tool for Editor.js
+# Paragraph Tool with alignment for Editor.js
 
 Basic text Tool for the [Editor.js](https://ifmo.su/editor).
+forked by [paragraph plugin](https://github.com/editor-js/paragraph)
 
 ## Installation
 
@@ -11,13 +12,13 @@ Basic text Tool for the [Editor.js](https://ifmo.su/editor).
 Get the package
 
 ```shell
-npm i --save @editorjs/paragraph
+npm i --save editorjs-paragraph-with-alignment
 ```
 
 Include module at your application
 
 ```javascript
-const Paragraph = require('@editorjs/paragraph');
+const Paragraph = require('editorjs-paragraph-with-alignment');
 ```
 
 ### Download to your project's source dir
@@ -27,15 +28,7 @@ const Paragraph = require('@editorjs/paragraph');
 
 ### Load from CDN
 
-You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@editorjs/paragraph).
-
-`https://cdn.jsdelivr.net/npm/@editorjs/paragraph@2.0.2`
-
-Then require this script on page with Editor.js.
-
-```html
-<script src="..."></script>
-```
+`https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@1.0.0`
 
 ## Usage
 
@@ -75,6 +68,7 @@ The Paragraph Tool supports these configuration parameters:
 | Field  | Type     | Description      |
 | ------ | -------- | ---------------- |
 | text   | `string` | paragraph's text |
+| alignment   | `string` | left/center/right |
 
 
 ```json
@@ -82,6 +76,7 @@ The Paragraph Tool supports these configuration parameters:
     "type" : "paragraph",
     "data" : {
         "text" : "Check out our projects on a <a href=\"https://github.com/codex-team\">GitHub page</a>.",
+        "alignment": "left"
     }
 }
 ```
