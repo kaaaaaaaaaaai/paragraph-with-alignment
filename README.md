@@ -5,6 +5,8 @@
 Basic text Tool for the [Editor.js](https://ifmo.su/editor).
 forked by [paragraph plugin](https://github.com/editor-js/paragraph)
 
+<img width="781" alt="スクリーンショット 2020-08-13 23 07 09" src="https://user-images.githubusercontent.com/2194021/90145742-39689700-ddbb-11ea-9eab-4b942048683b.png">
+
 ## Installation
 
 ### Install via NPM
