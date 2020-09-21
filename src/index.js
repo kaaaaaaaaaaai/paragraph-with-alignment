@@ -90,12 +90,16 @@ class Paragraph {
          * @type {string}
          */
         this._placeholder = config.placeholder ? config.placeholder : Paragraph.DEFAULT_PLACEHOLDER;
-        this.data = {
+
+        this._data = {
             text: data.text || '',
             alignment: data.alignment || config.defaultAlignment || Paragraph.DEFAULT_ALIGNMENT
         };
         this._element = this.drawView();
+        this.data = data;
+
         this._preserveBlank = config.preserveBlank !== undefined ? config.preserveBlank : false;
+
     }
 
     /**
@@ -202,6 +206,32 @@ class Paragraph {
 
         this.data = data;
     }
+
+    /**
+     * Get current Tools`s data
+     * @returns {ParagraphData} Current data
+     * @private
+     */
+    get data() {
+        return this._data;
+    }
+
+    /**
+     * Store data in plugin:
+     * - at the this._data property
+     * - at the HTML
+     *
+     * @param {ParagraphData} data — data to set
+     * @private
+     */
+    set data(data) {
+        this._data = {
+            text: data.text || '',
+            alignment: data.alignment || this.config.defaultAlignment || Paragraph.DEFAULT_ALIGNMENT
+        }
+        this._element.innerHTML = this._data.text || '';
+    }
+
 
     /**
      * Enable Conversion Toolbar. Paragraph can be converted to/from other tools
