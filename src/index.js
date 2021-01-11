@@ -30,6 +30,14 @@ class Paragraph {
     }
 
     /**
+     *
+     * @returns {boolean}
+     */
+    static get isReadOnlySupported() {
+        return true;
+    }
+
+    /**
      * Default paragraph alignment
      *
      * @public
@@ -40,17 +48,16 @@ class Paragraph {
     }
 
     /**
-     * Render plugin`s main Element and fill it with saved data
      *
-     * @param {object} params - constructor params
-     * @param {ParagraphData} params.data - previously saved data
-     * @param {ParagraphConfig} params.config - user config for Tool
-     * @param {object} params.api - editor.js api
+     * @param data
+     * @param config
+     * @param api
+     * @param readOnly
      */
-    constructor({data, config, api}) {
+    constructor({data, config, api, readOnly}) {
         this.api = api;
         this.config = config;
-
+        this.readOnly = readOnly;
         this._CSS = {
             block: this.api.styles.block,
             wrapper: 'ce-paragraph',
@@ -129,7 +136,7 @@ class Paragraph {
         let div = document.createElement('DIV');
 
         div.classList.add(this._CSS.wrapper, this._CSS.block, this._CSS.alignment[this.data.alignment]);
-        div.contentEditable = true;
+        div.contentEditable = !this.readOnly;
         div.dataset.placeholder = this.api.i18n.t(this._placeholder);
         div.innerHTML = this.data.text;
 
