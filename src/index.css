@@ -12,6 +12,10 @@
     text-align: left;
 }
 
+.ce-paragraph--justify {
+    text-align: justify;
+}
+
 .ce-paragraph[data-placeholder]:empty::before{
   content: attr(data-placeholder);
   color: #707684;
