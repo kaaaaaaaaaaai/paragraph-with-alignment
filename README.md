@@ -2,10 +2,19 @@
 
 # Paragraph Tool with alignment for Editor.js
 
-Basic text Tool for the [Editor.js](https://ifmo.su/editor).
-forked by [paragraph plugin](https://github.com/editor-js/paragraph)
+#### If you can help, please push the Star button :)
 
-<img width="781" alt="スクリーンショット 2020-08-13 23 07 09" src="https://user-images.githubusercontent.com/2194021/90145742-39689700-ddbb-11ea-9eab-4b942048683b.png">
+![image](https://user-images.githubusercontent.com/2194021/113742029-29803780-973d-11eb-8a66-c599d5d08c16.png)
+
+### If you want to add an alignment to another block
+This is useful
+[editorjs-alignment-blocktune](https://github.com/kaaaaaaaaaaai/editorjs-alignment-blocktune)
+
+## versions
+| version  | Description     |
+| ------ | -------- |
+| @2.x   | support alignment left/center/right |
+| @3.x | support alignment left/center/right/justify |
 
 ## Installation
 
@@ -14,7 +23,7 @@ forked by [paragraph plugin](https://github.com/editor-js/paragraph)
 Get the package
 
 ```shell
-npm i --save editorjs-paragraph-with-alignment
+npm i --save editorjs-paragraph-with-alignment@3.x
 ```
 
 Include module at your application
@@ -30,7 +39,7 @@ const Paragraph = require('editorjs-paragraph-with-alignment');
 
 ### Load from CDN
 
-`https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@2.0.0`
+`https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@3.0.0`
 
 ## Usage
 
@@ -70,7 +79,7 @@ The Paragraph Tool supports these configuration parameters:
 | Field  | Type     | Description      |
 | ------ | -------- | ---------------- |
 | text   | `string` | paragraph's text |
-| alignment   | `string` | left/center/right |
+| alignment   | `string` | left/center/right/justify |
 
 
 ```json
