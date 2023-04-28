@@ -55,10 +55,11 @@ class Paragraph {
      * @param api
      * @param readOnly
      */
-    constructor({data, config, api, readOnly}) {
+    constructor({data, config, api, readOnly, block}) {
         this.api = api;
         this.config = config;
         this.readOnly = readOnly;
+        this.block = block;
         this._CSS = {
             block: this.api.styles.block,
             wrapper: 'ce-paragraph',
@@ -218,6 +219,7 @@ class Paragraph {
         };
 
         this.data = data;
+        this.api.blocks.update(this.block.id, this.data);
     }
 
     /**
